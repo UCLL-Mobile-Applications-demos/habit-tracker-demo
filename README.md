@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 
 Create a new folder called `components` in your project root directory:
 
-```shellscript
+```bash
 mkdir components
 ```
 
