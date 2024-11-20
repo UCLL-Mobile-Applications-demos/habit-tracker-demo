@@ -517,7 +517,7 @@ renderItem={({ item }) => (
 
 In the `HabitButton` component, we use `onPress` and `onLongPress` to handle different touch events:
 
-```javascriptreact
+```js
 <TouchableOpacity 
   onPress={handlePress}
   onLongPress={handleLongPress}
