@@ -454,7 +454,9 @@ We created a custom `HabitButton` component in a separate file to encapsulate th
 
 ### 2. FlatList
 
-We use `FlatList` to efficiently render our list of habits:
+FlatList is a core component in React Native used for efficiently rendering scrollable lists. It's optimized for long lists of data and provides better performance than a simple ScrollView with an array of elements.
+
+We use `FlatList` to render our list of habits:
 
 ```javascriptreact
 <FlatList
@@ -469,6 +471,47 @@ We use `FlatList` to efficiently render our list of habits:
 ```
 
 `FlatList` is optimized for long lists and provides features like lazy rendering and recycling of list item components.
+
+- `data` is the array of items to be rendered.
+- `renderItem` defines how each item should be rendered.
+- `keyExtractor` defines how to get a unique key for each item.
+- `numColumns` specifies that we want a grid layout with 2 columns.
+- `contentContainerStyle` applies styles to the container of all the rendered items.
+
+By using FlatList with properly implemented `keyExtractor` and `renderItem` props, you ensure that your list renders efficiently, even with large amounts of data. This is crucial for maintaining good performance in your React Native applications.
+
+#### 2.1. keyExtractor
+
+
+The `keyExtractor` prop is a function that tells the FlatList how to extract a unique key for each item in your data array. This key is used by React to optimize the rendering and updating of list items.
+
+In our Habit Tracker app, we used it like this:
+
+```javascriptreact
+keyExtractor={(item) => item.id}
+```
+
+- The `keyExtractor` function receives each item in your data array as an argument.
+- It should return a unique string that identifies that item.
+- In our case, we're using the `id` property of each habit object as the unique key.
+
+
+#### 2.2. renderItem
+
+
+The `renderItem` prop is a function that tells FlatList how to render each item in your data array. It receives an object with the `item` property and should return a React element.
+
+In our app, we used it like this:
+
+```javascriptreact
+renderItem={({ item }) => (
+  <HabitButton habit={item} onPress={incrementTotalCompletions} />
+)}
+```
+
+- The function receives an object with the `item` property, which we destructure.
+- For each item (habit in our case), we return a `HabitButton` component.
+- We pass the habit data and an `onPress` function as props to `HabitButton`. This allows the component to trigger a function in te App.js (that handles the total completed habbits)
 
 ### 3. Event Handling
 

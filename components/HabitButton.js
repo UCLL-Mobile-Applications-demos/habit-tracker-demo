@@ -6,7 +6,7 @@ const HabitButton = ({ habit, onPress }) => {
 
   const handlePress = () => {
     setCount(prevCount => prevCount + 1);
-    onPress();
+    onPress();//invokes incrementTotalCompletions in App.js
   };
 
   const handleLongPress = () => {
