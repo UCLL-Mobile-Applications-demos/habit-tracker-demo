@@ -446,7 +446,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-## Explanation of Key Concepts
+## Explanation of Applied Principles
 
 ### 1. Custom Components
 
