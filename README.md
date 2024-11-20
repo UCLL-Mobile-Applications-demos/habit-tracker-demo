@@ -21,7 +21,7 @@ First, let's create the basic structure of our app without any functionality.
 
 Update the `App.js` file:
 
-```javascriptreact
+```js
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 
@@ -128,7 +128,7 @@ mkdir components
 
 Now, create a new file `HabitButton.js` inside the `components` folder:
 
-```javascriptreact
+```js
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
@@ -173,7 +173,7 @@ export default HabitButton;
 
 Update the `App.js` file to import the HabitButton component:
 
-```javascriptreact
+```js
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import HabitButton from './components/HabitButton';
@@ -244,7 +244,7 @@ Now, let's add touch functionality to our HabitButton component.
 
 Update the `components/HabitButton.js` file:
 
-```javascriptreact
+```js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
@@ -309,7 +309,7 @@ Finally, let's add state to our HabitButton components and update the total coun
 
 Update the `components/HabitButton.js` file:
 
-```javascriptreact
+```js
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
@@ -373,7 +373,7 @@ export default HabitButton;
 
 Update the `App.js` file:
 
-```javascriptreact
+```js
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import HabitButton from './components/HabitButton';
@@ -458,7 +458,7 @@ FlatList is a core component in React Native used for efficiently rendering scro
 
 We use `FlatList` to render our list of habits:
 
-```javascriptreact
+```js
 <FlatList
   data={habitData}
   renderItem={({ item }) => (
@@ -487,7 +487,7 @@ The `keyExtractor` prop is a function that tells the FlatList how to extract a u
 
 In our Habit Tracker app, we used it like this:
 
-```javascriptreact
+```js
 keyExtractor={(item) => item.id}
 ```
 
@@ -503,7 +503,7 @@ The `renderItem` prop is a function that tells FlatList how to render each item 
 
 In our app, we used it like this:
 
-```javascriptreact
+```js
 renderItem={({ item }) => (
   <HabitButton habit={item} onPress={incrementTotalCompletions} />
 )}
@@ -544,7 +544,7 @@ State allows our components to re-render and update the UI when data changes.
 
 We use `accessibilityLabel` to provide a description of the button for screen readers:
 
-```javascriptreact
+```js
 accessibilityLabel={`${habit.name} button, completed ${count} times. Tap to log, long press to reset.`}
 ```
 We describe what actions the button can perform and it's current state.
