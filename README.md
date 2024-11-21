@@ -1,3 +1,5 @@
+# Step-by-step Guide on how we build this Habbit Tracker
+
 ### 1. setup a blank project
 
 using expo setup a blank project.
@@ -12,7 +14,9 @@ now run the project using
 npx expo start
 ```
 
-press `i` to open the app in iOS simulator, or `a` to open in the android emulator.  
+Make sure Xcode and/or your android emulated device is running.  
+Next press `i` to open the app in iOS simulator, or `a` to open in the android emulator. 
+
 Alternatively you can install expo go on you mobile device and scan the QR-code (doesn't work on campus).
 
 ### 2. Create the basic layout and structure
