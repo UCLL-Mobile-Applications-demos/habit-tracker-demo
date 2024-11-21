@@ -1,3 +1,5 @@
+to run the demo run `npx npm install` to recreate the node modules folder
+
 # Step-by-step Guide on how we build this Habbit Tracker
 
 ### 1. setup a blank project
